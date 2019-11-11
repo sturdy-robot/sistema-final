@@ -3,20 +3,20 @@
 Esse sistema foi implementado como parte do TCC de Pedrenrique Gonçalves Guimarães.
 
 Para rodar o sistema:
-    git clone https://github.com/sturdy-robot/sistema-final.git
-    git pull
+	git clone https://github.com/sturdy-robot/sistema-final.git
+	git pull
 
 Certifique-se de ter o NodeJS instalado, e também ter o python 3.6+ disponível.
-    npm -v
-    npm i -g ionic
+	npm -v
+	npm i -g ionic
 
 Para instalar as dependências do Python:
-    pip install scikit-surprise pandas numpy flask
+	pip install scikit-surprise pandas numpy flask
 
 Para rodar o sistema de recomendação, inicie o arquivo app.py que se encontra nesta página inicial. Por padrão, o Flask inicia no endereço 127.0.0.1:5000
 
 Assim, é só iniciar o sistema do Ionic com o comando:
-    ionic serve
+	ionic serve
 
 É necessário iniciar o Flask primeiro para que ele seja capaz de rodar o sistema de recomendação, senão o Ionic não consegue utilizar o comando GET e disponibilizar o resultado na página inicial.
 
