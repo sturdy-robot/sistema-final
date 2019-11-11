@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+        </ion-buttons>
+            <ion-title>Detalhes</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-list>
+        <ion-grid>
+            <ion-row class="ion-align-items-center">
+                <ion-col>
+                    <ion-grid>
+                        <ion-row class="ion-align-items-center">
+                            <ion-col>
+                                <ion-card *ngIf="item">
+                                    <ion-card-header>
+                                        <ion-item>
+                                            <ion-label>
+                                                <ion-card-title>
+                                                    {{item.nome}}
+                                                </ion-card-title>
+                                            </ion-label>
+                                        </ion-item>
+                                        <ion-card-content>
+                                            <ion-card-subtitle>
+                                                <ion-icon name="pricetag"></ion-icon>
+                                                <ion-label>{{item.tipo}}</ion-label>
+                                            </ion-card-subtitle>
+                                        </ion-card-content>
+                                    </ion-card-header>
+                                    <ion-item>
+                                        <p><b>Técnicas utilizadas:</b> {{item.tecnicas}}</p>
+                                    </ion-item>
+                                    <ion-item>
+                                        <p><b>Modelo de implementação:</b> {{item.modelo}}</p>
+                                    </ion-item>
+                                    <ion-item>
+                                        <p><b>Gestor:</b> {{item.gestor}}</p>
+                                    </ion-item>
+                                    <ion-item>
+                                        <p><b>Tipo de falha tratada:</b> {{item.tipo}}</p>
+                                    </ion-item>
+                                    <ion-item>
+                                        <p><b>Vantagens:</b> {{item.vantagem}}</p>
+                                    </ion-item>
+                                    <ion-item>
+                                        <p><b>Desvantagens:</b> {{item.desvantagem}}</p>
+                                    </ion-item>
+                                </ion-card>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-list>
+</ion-content>
