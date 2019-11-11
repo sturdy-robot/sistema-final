@@ -18,10 +18,10 @@ export class DetalhesPage implements OnInit {
 
   ngOnInit() {
     this.dataProvider.getLocalData().subscribe((data: any) => {
-      let itemId = this.route.snapshot.paramMap.get('itemId');
-      itemId = Number(itemId);
+      const itemId = this.route.snapshot.paramMap.get('itemId');
+      const itemid = Number(itemId);
       for(const conteudo of data) {
-        if (conteudo.itemid === itemId) {
+        if (conteudo.itemid === itemid) {
           this.item = conteudo;
           break;
         }

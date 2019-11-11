@@ -34,7 +34,7 @@ def compare_iid(dicionario, tecnicas):
 
 def get_all(uid):
     json1 = get_data_json(json.dumps(get_predictions_flask(uid)))
-    with open('data.json', 'r') as f:
+    with open('src/assets/data.json', 'r') as f:
         json2 = json.load(f)
     recommendations = compare_iid(json1,json2)
     return recommendations
