@@ -1,12 +1,12 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Técnicas de Tolerância a Falhas
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Técnicas de Tolerância a Falhas
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-toolbar>
@@ -14,38 +14,42 @@
 </ion-toolbar>
 
 <ion-content>
-  <ion-list>
-    <ion-grid>
-    <ion-row class="ion-align-items-center">
-          <ion-col>
-              <ion-grid>
-                  <ion-row class="ion-align-items-center">
-                      <ion-col>
-                          <ion-card *ngFor="let item of items" routerLink="/detalhes/{{item.itemid}}">
-                              <ion-card-header>
-                                  <ion-item>
-                                      <ion-label>
-                                          <ion-card-title>
-                                          {{item.nome}}
-                                          </ion-card-title>
-                                      </ion-label>
-                                  </ion-item>
-                              </ion-card-header>
-                              <ion-card-content>
-                                  <ion-icon name="arrow-round-forward">
-                                  </ion-icon><ion-label>{{item.tecnicas}}</ion-label>
-                              </ion-card-content>
-            
-                              <ion-card-content>
-                                  <ion-card-subtitle><ion-icon name = "pricetag"></ion-icon><ion-label>{{item.tipo}}</ion-label></ion-card-subtitle>
-                              </ion-card-content>
-                          </ion-card>
-                      </ion-col>
-                  </ion-row>
-              </ion-grid>
-          </ion-col>
-      </ion-row>
-  </ion-grid>
-  </ion-list>
+    <ion-list>
+        <ion-grid>
+            <ion-row class="ion-align-items-center">
+                <ion-col>
+                    <ion-grid>
+                        <ion-row class="ion-align-items-center">
+                            <ion-col>
+                                <ion-card *ngFor="let item of items" routerLink="/detalhes/{{item.itemid}}">
+                                    <ion-card-header>
+                                        <ion-item>
+                                            <ion-label>
+                                                <ion-card-title>
+                                                    {{item.nome}}
+                                                </ion-card-title>
+                                            </ion-label>
+                                        </ion-item>
+                                    </ion-card-header>
+                                    <ion-card-content>
+                                        <ion-icon name="arrow-round-forward">
+                                        </ion-icon>
+                                        <ion-label>{{item.tecnicas}}</ion-label>
+                                    </ion-card-content>
+
+                                    <ion-card-content>
+                                        <ion-card-subtitle>
+                                            <ion-icon name="pricetag"></ion-icon>
+                                            <ion-label>{{item.tipo}}</ion-label>
+                                        </ion-card-subtitle>
+                                    </ion-card-content>
+                                </ion-card>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-list>
 
 </ion-content>

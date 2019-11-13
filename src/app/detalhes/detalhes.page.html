@@ -3,7 +3,7 @@
         <ion-buttons slot="start">
             <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
         </ion-buttons>
-            <ion-title>Detalhes</ion-title>
+        <ion-title>Detalhes</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -48,6 +48,14 @@
                                     </ion-item>
                                     <ion-item>
                                         <p><b>Desvantagens:</b> {{item.desvantagem}}</p>
+                                    </ion-item>
+                                    <ion-item>
+                                        <ion-label><b>Avalie</b></ion-label>
+                                        <rating [(ngModel)]="rate"
+                                                reandonly="false"
+                                                size="default"
+                                                (ngModelChange)="onModelChange($event)">
+                                        </rating>
                                     </ion-item>
                                 </ion-card>
                             </ion-col>
