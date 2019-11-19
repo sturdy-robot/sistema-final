@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {DataService} from '../data.service';
 import {TouchSequence} from 'selenium-webdriver';
 import {Router} from '@angular/router';
+import _ from 'lodash';
 
 @Component({
     selector: 'app-home',
@@ -10,25 +11,36 @@ import {Router} from '@angular/router';
 })
 export class HomePage implements OnInit {
     public recommendations: any;
-    public items: any;
+    public allRecommendations: any;
+    public queryText: string;
 
     constructor(private dataService: DataService,
                 private router: Router) {
-
     }
 
     ngOnInit() {
-        this.dataService.getLocalData().subscribe(tecnicas => {
-            this.items = tecnicas;
-        });
-
         this.dataService.getRecommendation().subscribe(data => {
-            this.recommendations = data;
-            console.log(data);
+            this.allRecommendations = data;
+            this.recommendations = this.allRecommendations;
         });
     }
 
-    compareNames() {
+    filterTags(tag: any) {
+        let val = tag.target.value;
+        if (val && val.trim() !== '') {
+            this.recommendations = _.values(this.allRecommendations);
+            this.recommendations = this.recommendations.filter((recommendations) => {
+                return (recommendations.nome.toLowerCase().indexOf(val.toLowerCase()) > -1
+                    || recommendations.tecnicas.toLowerCase().indexOf(val.toLowerCase()) > -1
+                    || recommendations.tipo.toLowerCase().indexOf(val.toLowerCase()) > -1
+                    || recommendations.problema.toLowerCase().indexOf(val.toLowerCase()) > -1
+                    || recommendations.gestor.toLowerCase().indexOf(val.toLowerCase()) > -1
+                    || recommendations.modelo.toLowerCase().indexOf(val.toLowerCase()) > -1
+                );
+            });
+        } else {
+            this.recommendations = this.allRecommendations;
+        }
     }
 
 }

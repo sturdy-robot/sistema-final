@@ -35,7 +35,6 @@ export class DetalhesPage implements OnInit {
         });
     }
     onModelChange(rate) {
-        
         console.log(rate);
     }
 }

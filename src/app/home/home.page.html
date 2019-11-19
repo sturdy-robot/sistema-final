@@ -10,9 +10,12 @@
 </ion-header>
 
 <ion-toolbar>
-    <ion-searchbar placeholder="Digite as tags que deseja procurar..."></ion-searchbar>
+    <ion-searchbar animated placeholder="Digite as tags que deseja procurar..."
+    [(ngModel)]="queryText"
+    (ionInput)="filterTags($event)"
+    clearInput>
+    </ion-searchbar>
 </ion-toolbar>
-
 
 <!-- TAGS -->
 <ion-content class="ion-padding">
