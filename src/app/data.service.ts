@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators';
 export class DataService {
     data: any;
     userid: any;
-    public flask = 'http://127.0.0.1:5000/predictions/8';
+    public flask = 'http://127.0.0.1:5000/predictions/2';
 
     constructor(private http: HttpClient) {
     }
