@@ -14,7 +14,7 @@ Certifique-se de ter o NodeJS instalado, e também ter o python 3.6+ disponível
 ```
 Para instalar as dependências do Python:
 ```
-	pip install scikit-surprise pandas numpy flask
+	pip install scikit-surprise pandas numpy flask flask-cors
 ```
 Para rodar o sistema de recomendação, inicie o arquivo app.py que se encontra nesta página inicial. Por padrão, o Flask inicia no endereço 127.0.0.1:5000
 
