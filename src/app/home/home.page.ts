@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '../data.service';
-import {TouchSequence} from 'selenium-webdriver';
 import {ActivatedRoute, Router} from '@angular/router';
 import _ from 'lodash';
 

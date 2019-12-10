@@ -1,8 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {of} from 'rxjs';
-import {map} from 'rxjs/operators';
-import {Router, ActivatedRoute} from '@angular/router';
 
 @Injectable({
     providedIn: 'root'
@@ -12,9 +9,7 @@ export class DataService {
     public flask: any;
 
     constructor(
-        private http: HttpClient,
-        private router: Router,
-        private route: ActivatedRoute
+        private http: HttpClient
     ) {
     }
 
