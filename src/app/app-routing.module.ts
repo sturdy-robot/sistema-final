@@ -4,7 +4,7 @@ import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'home/8/0',
+        redirectTo: 'home/8/1',
         pathMatch: 'full'
     },
     {

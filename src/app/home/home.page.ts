@@ -30,7 +30,7 @@ export class HomePage implements OnInit {
     }
 
     filterTags(tag: any) {
-        let val = tag.target.value;
+        const val = tag.target.value;
         if (val && val.trim() !== '') {
             this.recommendations = _.values(this.allRecommendations);
             this.recommendations = this.recommendations.filter((recommendations) => {
