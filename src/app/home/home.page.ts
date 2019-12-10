@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '../data.service';
 import {TouchSequence} from 'selenium-webdriver';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import _ from 'lodash';
 
 @Component({
@@ -13,13 +13,17 @@ export class HomePage implements OnInit {
     public recommendations: any;
     public allRecommendations: any;
     public queryText: string;
+    public userId: any;
 
     constructor(private dataService: DataService,
-                private router: Router) {
+                private router: Router,
+                private route: ActivatedRoute) {
     }
 
     ngOnInit() {
-        this.dataService.getRecommendation().subscribe(data => {
+        this.userId = this.route.snapshot.paramMap.get('userId');
+        console.log(this.userId);
+        this.dataService.getRecommendation(this.userId).subscribe(data => {
             this.allRecommendations = data;
             this.recommendations = this.allRecommendations;
         });

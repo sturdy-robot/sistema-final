@@ -9,7 +9,6 @@ import {Router, ActivatedRoute} from '@angular/router';
 })
 export class DetalhesPage implements OnInit {
     item: any;
-    userId: any;
     defaultHref: any;
     rate: any;
 
@@ -21,7 +20,6 @@ export class DetalhesPage implements OnInit {
     }
 
     ngOnInit() {
-        this.userId = 8;
         // O conteúdo selecionado pelo usuário é pego pelo ID do Item e mostrado na tela de detalhes
         this.dataProvider.getLocalData().subscribe((data: any) => { // pega o json
             const itemId = this.route.snapshot.paramMap.get('itemId'); // associa ao ItemID
