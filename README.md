@@ -46,7 +46,8 @@ O arquivo que guarda os dados das técnicas se encontra em src/apps/assets/data.
 Por padrão, o Flask mostra apenas os resultados do usuário 8, e fixa as recomendações de uma maneira específica para garantir reproducibilidade. Para alterar tais padrões deve-se alterar os valores em recommender_system.py, na função get_predictions_flask() altere ou delete o `my_seed`, `random.seed` e o `np.random.seed`. Tais funções garantem que os resultados gerados aleatoriamente sigam a semente imposta.
 
 ### Utilizando um usuário diferente
-No aplicativo Ionic, para pegar os dados de um usuário diferente, utilizamos um Service para prover os dados do serviço. Ele se encontra em `/src/app/data.service.ts`. O valor da variável flask está como: `flask = 'http://127.0.0.1:5000/predictions/8'` por padrão. Para alterar o usuário, basta alterar o número final da URL.
+No aplicativo Ionic, para pegar os dados de um usuário diferente, utilizamos um Service para prover os dados do serviço. Ele se encontra em `/src/app/data.service.ts`.
+A página Home recebe um valor de `userId` padrão sendo o usuário 8. Basta alterar o link da página para os valores possíveis (de 1 a 10 usando o arquivo menor e de 1 a 1000 no maior arquivo).
 
 ## Licença
 
