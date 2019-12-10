@@ -13,7 +13,7 @@ export class AppComponent {
     public appPages = [
         {
             title: 'Sistema de Recomendação',
-            url: '/home',
+            url: '/home/8/1',
             icon: 'home'
         },
         {

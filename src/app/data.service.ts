@@ -9,7 +9,6 @@ import {Router, ActivatedRoute} from '@angular/router';
 })
 export class DataService {
     data: any;
-    userid: any;
     public flask: any;
 
     constructor(
@@ -23,9 +22,8 @@ export class DataService {
         return this.http.get('assets/data.json');
     }
 
-    getRecommendation(userid) {
-        this.userid = userid;
-        this.flask = 'http://127.0.0.1:5000/predictions/' + this.userid;
+    getRecommendation(userid, randOn) {
+        this.flask = 'http://127.0.0.1:5000/predictions/' + randOn + '/' + userid;
         return this.http.get(this.flask);
     }
 }

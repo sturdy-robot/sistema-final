@@ -14,6 +14,7 @@ export class HomePage implements OnInit {
     public allRecommendations: any;
     public queryText: string;
     public userId: any;
+    public randOn: any;
 
     constructor(private dataService: DataService,
                 private router: Router,
@@ -22,8 +23,8 @@ export class HomePage implements OnInit {
 
     ngOnInit() {
         this.userId = this.route.snapshot.paramMap.get('userId');
-        console.log(this.userId);
-        this.dataService.getRecommendation(this.userId).subscribe(data => {
+        this.randOn = this.route.snapshot.paramMap.get('randOn');
+        this.dataService.getRecommendation(this.userId, this.randOn).subscribe(data => {
             this.allRecommendations = data;
             this.recommendations = this.allRecommendations;
         });

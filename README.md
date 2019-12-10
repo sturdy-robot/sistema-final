@@ -42,12 +42,12 @@ O arquivo que guarda os dados das técnicas se encontra em src/apps/assets/data.
 
 ## Padrões fixados
 
-### Aleatoriedade
-Por padrão, o Flask mostra apenas os resultados do usuário 8, e fixa as recomendações de uma maneira específica para garantir reproducibilidade. Para alterar tais padrões deve-se alterar os valores em recommender_system.py, na função get_predictions_flask() altere ou delete o `my_seed`, `random.seed` e o `np.random.seed`. Tais funções garantem que os resultados gerados aleatoriamente sigam a semente imposta.
-
-### Utilizando um usuário diferente
-No aplicativo Ionic, para pegar os dados de um usuário diferente, utilizamos um Service para prover os dados do serviço. Ele se encontra em `/src/app/data.service.ts`.
-A página Home recebe um valor de `userId` padrão sendo o usuário 8. Basta alterar o link da página para os valores possíveis (de 1 a 10 usando o arquivo menor e de 1 a 1000 no maior arquivo).
+### Aleatoriedade e utilização de um usuário diferente
+Por padrão, o Flask mostra apenas os resultados do usuário 8, e fixa as recomendações de uma maneira específica para garantir reproducibilidade,
+evitando a aleatoriedade que o SurPRISE gera para cada recomendação. Entretanto, a URL da homepage recebe dois parâmetros: `/userId/randOn`.
+Tais parâmetros correspondem ao Id do Usuário e à ativação da aleatoriedade. Alterando o ID do usuário, você recebe as recomendações
+para o usuário daquele id. Alterando o valor de `randOn` para `0` você liga a aleatoriedade, e a cada atualização de página, o sistema irá calcular
+uma recomendação distinta, assim como outros sistemas de recomendação fazem (como o Youtube, Facebook, etc).
 
 ## Licença
 

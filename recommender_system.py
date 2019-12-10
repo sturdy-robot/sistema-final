@@ -49,14 +49,15 @@ def get_predictions():
 
     return top_n
 
-def get_predictions_flask(userid):
+def get_predictions_flask(userid, rand_on):
     """
     Get all the predictions and give it to flask
     :return:
     """
-    my_seed = 0
-    random.seed(my_seed)
-    np.random.seed(my_seed)
+    if rand_on == 1: # Ativar ou desativar a aleatoriedade
+        my_seed = 0
+        random.seed(my_seed)
+        np.random.seed(my_seed)
 
     recommendations = get_predictions()
     for users in recommendations.items():
