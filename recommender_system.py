@@ -10,7 +10,7 @@ from collections import defaultdict
 import random
 import csv
 import numpy as np
-import Path
+from pathlib import Path
 
 dataset = Path('src/assets/userdata_5_10.csv')
 
