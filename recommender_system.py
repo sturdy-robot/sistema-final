@@ -8,7 +8,10 @@ from surprise import Reader
 from surprise.model_selection import cross_validate
 from collections import defaultdict
 import random
+import csv
 import numpy as np
+
+dataset = 'src/assets/userdata_5_10.csv'
 
 def get_top_n(predictions, n=10):
     """
@@ -33,7 +36,6 @@ def get_predictions():
     Get all the predictions and print it on screen
     :return:
     """
-    dataset = 'userdata_5_10.csv'
     reader = Reader(line_format='user item rating', sep=',', rating_scale=(1, 5))
     data = Dataset.load_from_file(dataset, reader=reader)
     trainset = data.build_full_trainset()
@@ -63,3 +65,12 @@ def get_predictions_flask(userid, rand_on):
     for users in recommendations.items():
         if users[0] == str(userid):
             return (users[1])
+
+
+def get_recommended_rating(userid, itemid):
+
+    pass
+
+def write_rating(userid, itemid, rating):
+    with open(dataset, 'a') as fd:
+        fd.write(userid, itemid, rating)

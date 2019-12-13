@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {DataService} from '../data.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import _ from 'lodash';
 
 @Component({
@@ -12,12 +12,15 @@ export class ListPage implements OnInit {
     public items: any;
     public allItems: any;
     public queryText: any;
+    public userId: any;
 
     constructor(private dataService: DataService,
-                private router: Router) {
+                private router: Router,
+                private route: ActivatedRoute) {
     }
 
     ngOnInit() {
+        this.userId = this.route.snapshot.paramMap.get('userId');
     }
 
     ionViewDidEnter() {
@@ -28,7 +31,7 @@ export class ListPage implements OnInit {
     }
 
     filterTags(tag: any) {
-        let val = tag.target.value;
+        const val = tag.target.value;
         if (val && val.trim() !== '') {
             this.items = _.values(this.allItems);
             this.items = this.items.filter((items) => {
