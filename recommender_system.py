@@ -10,9 +10,11 @@ from collections import defaultdict
 import random
 import csv
 import numpy as np
-from pathlib import Path
+import os
 
-dataset = Path('src/assets/userdata_5_10.csv')
+THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+
+dataset = os.path.join(THIS_FOLDER, 'src/assets/userdata_5_10.csv')
 
 def get_top_n(predictions, n=10):
     """
