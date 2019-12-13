@@ -11,7 +11,7 @@ import random
 import csv
 import numpy as np
 
-dataset = 'src/assets/userdata_5_10.csv'
+dataset = '../src/assets/userdata_5_10.csv'
 
 def get_top_n(predictions, n=10):
     """

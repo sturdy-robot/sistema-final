@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class DataService {
     data: any;
-    public flask: any;
+    public flask = 'http://pedrug19.pythonanywhere.com/';
 
     constructor(
         private http: HttpClient
@@ -14,15 +14,16 @@ export class DataService {
     }
 
     getCsvData() {
-        return this.http.get('assets/userdata_5_10.csv');
+
     }
+
 
     getLocalData() {
         return this.http.get('assets/data.json');
     }
 
     getRecommendation(userid, randOn) {
-        this.flask = 'http://127.0.0.1:5000/predictions/' + randOn + '/' + userid;
-        return this.http.get(this.flask);
+        const flask = this.flask + '/predictions/' + randOn + '/' + userid;
+        return this.http.get(flask);
     }
 }
