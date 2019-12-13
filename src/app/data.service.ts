@@ -13,6 +13,10 @@ export class DataService {
     ) {
     }
 
+    getCsvData() {
+        return this.http.get('assets/userdata_5_10.csv');
+    }
+
     getLocalData() {
         return this.http.get('assets/data.json');
     }
