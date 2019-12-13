@@ -1,5 +1,10 @@
 import json
 from recommender_system import get_predictions_flask
+import os
+
+THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+
+jsonfile = os.path.join(THIS_FOLDER, 'src/assets/data.json')
 
 def get_data_json(json_file):
     dicionario = json.loads(json_file)
@@ -17,7 +22,7 @@ def compare_iid(dicionario, tecnicas):
 
 def get_all(uid, rand_on):
     json1 = get_data_json(json.dumps(get_predictions_flask(uid, rand_on)))
-    with open('src/assets/data.json', 'r') as f:
+    with open(jsonfile, 'r') as f:
         json2 = json.load(f)
     recommendations = compare_iid(json1,json2)
     return recommendations
