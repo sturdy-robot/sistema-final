@@ -13,7 +13,7 @@ CORS(app)
 def predictions(uid, rand_on):
     return json.dumps(get_all(uid, rand_on), indent=2)
 
-@app.route("/ratings/<int:uid>/<int:iid>", strict_slashes=False)
+@app.route("/ratings/<int:uid>/<int:iid>/<int:rating>", strict_slashes=False)
 def rating(uid,iid,rating):
     write_rating(uid,iid,rating)
 

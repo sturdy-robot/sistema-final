@@ -11,6 +11,7 @@ export class DetalhesPage implements OnInit {
     item: any;
     defaultHref: any;
     rate: any;
+    userId: any;
 
     constructor(
         private dataProvider: DataService,
@@ -21,6 +22,7 @@ export class DetalhesPage implements OnInit {
 
     ngOnInit() {
         // O conteúdo selecionado pelo usuário é pego pelo ID do Item e mostrado na tela de detalhes
+        const userId = this.route.snapshot.paramMap.get('userId');
         this.dataProvider.getLocalData().subscribe((data: any) => { // pega o json
             const itemId = this.route.snapshot.paramMap.get('itemId'); // associa ao ItemID
             const itemid = Number(itemId);
@@ -33,6 +35,7 @@ export class DetalhesPage implements OnInit {
         });
     }
     onModelChange(rate) {
-        console.log(rate);
+        this.dataProvider.submitRating(this.userId, this.item.itemid, rate);
+        console.log(this.item.itemid);
     }
 }

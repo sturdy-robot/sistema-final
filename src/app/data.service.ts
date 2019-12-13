@@ -6,15 +6,16 @@ import {HttpClient} from '@angular/common/http';
 })
 export class DataService {
     data: any;
-    public flask = 'http://pedrug19.pythonanywhere.com/';
+    public flask = 'https://pedrug19.pythonanywhere.com/';
 
     constructor(
         private http: HttpClient
     ) {
     }
 
-    getCsvData() {
-
+    submitRating(uid, itemid, rating) {
+        const flask = this.flask + '/ratings/' + uid + '/' + itemid + '/' + rating;
+        return this.http.get(flask);
     }
 
     getLocalData() {

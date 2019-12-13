@@ -24,7 +24,7 @@
     <ion-grid>
         <ion-row class="ion-align-items-center">
             <ion-col>
-                <ion-card *ngFor="let item of recommendations" routerLink="/detalhes/{{item.itemid}}">
+                <ion-card *ngFor="let item of recommendations" routerLink="/detalhes/{{this.userId}}/{{item.itemid}}">
                     <ion-card-header>
                         <ion-item>
                             <ion-label>
