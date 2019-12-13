@@ -10,8 +10,9 @@ from collections import defaultdict
 import random
 import csv
 import numpy as np
+import Path
 
-dataset = '../src/assets/userdata_5_10.csv'
+dataset = Path('src/assets/userdata_5_10.csv')
 
 def get_top_n(predictions, n=10):
     """
