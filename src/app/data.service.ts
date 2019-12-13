@@ -17,7 +17,6 @@ export class DataService {
 
     }
 
-
     getLocalData() {
         return this.http.get('assets/data.json');
     }

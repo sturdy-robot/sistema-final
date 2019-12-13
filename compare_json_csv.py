@@ -6,6 +6,23 @@ THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
 jsonfile = os.path.join(THIS_FOLDER, 'src/assets/data.json')
 
+new_dict = []
+dic = []
+"""
+def get_data_csv(csv_file):
+    dict_list = []
+
+    with open(csv_file, 'r') as f:
+        reader = csv.DictReader(f, fieldnames=['uid', 'itemid', 'rating'])
+        for line in reader:
+            dict_list.append(line)
+
+    # converting the OrderedDict to ordinary dictionary
+    new_dict = json.loads(json.dumps(dict_list))
+
+    return new_dict
+"""
+
 def get_data_json(json_file):
     dicionario = json.loads(json_file)
     return dicionario

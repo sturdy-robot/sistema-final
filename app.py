@@ -11,10 +11,6 @@ CORS(app)
 def predictions(uid, rand_on):
     return json.dumps(get_all(uid, rand_on), indent=2)
 
-@app.route("/rating/<int:uid>/<int:iid>/<int:rating>", strict_slashes=False)
-def rate_item(uid,iid,rating):
-    pass
-
 if __name__ == '__main__':
     app.run(debug=True)
 

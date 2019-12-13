@@ -21,8 +21,8 @@ export class HomePage implements OnInit {
     }
 
     ngOnInit() {
-        this.userId = this.route.snapshot.paramMap.get('userId'); // pegando o Id do usuário
-        this.randOn = this.route.snapshot.paramMap.get('randOn'); // pegando o valor de aleatoriedade
+        this.userId = this.route.snapshot.paramMap.get('userId');
+        this.randOn = this.route.snapshot.paramMap.get('randOn');
         this.dataService.getRecommendation(this.userId, this.randOn).subscribe(data => {
             this.allRecommendations = data;
             this.recommendations = this.allRecommendations;
@@ -33,7 +33,7 @@ export class HomePage implements OnInit {
         const val = tag.target.value;
         if (val && val.trim() !== '') {
             this.recommendations = _.values(this.allRecommendations);
-            this.recommendations = this.recommendations.filter((recommendations) => { // filtragem na barra de pesquisa
+            this.recommendations = this.recommendations.filter((recommendations) => {
                 return (recommendations.nome.toLowerCase().indexOf(val.toLowerCase()) > -1
                     || recommendations.tecnicas.toLowerCase().indexOf(val.toLowerCase()) > -1
                     || recommendations.tipo.toLowerCase().indexOf(val.toLowerCase()) > -1

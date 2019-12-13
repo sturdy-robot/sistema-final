@@ -75,7 +75,7 @@ def get_recommended_rating(userid, itemid):
     with open(dataset, 'r',newline='') as file:
         reader = csv.DictReader(file, fieldnames = None, delimiter=',')
     for i in dados:
-
+        pass
 
 def write_rating(userid, itemid, rating):
     with open(dataset, 'a') as fd:
