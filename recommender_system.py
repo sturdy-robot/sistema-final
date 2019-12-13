@@ -70,12 +70,12 @@ def get_predictions_flask(userid, rand_on):
             return (users[1])
 
 
-def get_recommended_rating(userid, itemid):
-    dados = []
+def get_rating(userid, itemid):
     with open(dataset, 'r',newline='') as file:
         reader = csv.DictReader(file, fieldnames = None, delimiter=',')
-    for i in dados:
-        pass
+    for i in reader:
+        if i[0] == userid and i[1] == itemid:
+            return i[2]
 
 def write_rating(userid, itemid, rating):
     with open(dataset, 'a') as fd:
